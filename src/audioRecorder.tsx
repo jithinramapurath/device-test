@@ -43,6 +43,14 @@ export default function AudioRecorder() {
             console.log(err.name + ": " + err.message);
         });
 
+        let browser = window.navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
+
+        console.log("browser", browser[1])
+        const getMediaType = () => {
+           if(browser[1] === 'Safari') return "audio/mp4"
+           else return "audio/webm"
+        }
+
     function getAccess() {
         navigator.mediaDevices
             .getUserMedia({ audio: true })
@@ -51,7 +59,7 @@ export default function AudioRecorder() {
 
                 try {
                     mediaRecorder = new MediaRecorder(mic, {
-                        mimeType: "audio/webm"
+                        mimeType: getMediaType()
                     });
                 } catch (err) {
                     console.log(err);

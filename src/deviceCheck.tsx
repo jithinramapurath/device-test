@@ -92,8 +92,6 @@ export default function VideoRecorder() {
             });
     };
 
-    const label = { inputProps: { 'aria-label': 'Hide video for me' } };
-
     return (
         <div className="App">
             <div className="audio-container">
