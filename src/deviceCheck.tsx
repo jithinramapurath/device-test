@@ -23,6 +23,15 @@ export default function VideoRecorder() {
         getVideo();
     }, [videoRef]);
 
+
+    let browser = window.navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
+
+    console.log("browser", browser[1])
+    const getMediaType = () => {
+       if(browser[1] === 'Safari') return "video/mp4"
+       else return "video/webm"
+    }
+
     const getVideo = () => {
         navigator.mediaDevices
             .getUserMedia({ audio: true, video: { width: 300, height: 300 } })
@@ -31,13 +40,15 @@ export default function VideoRecorder() {
                 // @ts-ignore
                 video.muted = true;
                 // @ts-ignore
+                video.setAttribute("playsinline", true);
+                // @ts-ignore
                 video.srcObject = stream;
                 // @ts-ignore
                 video.play();
                 let mediaRecorder;
                 try {
                     mediaRecorder = new MediaRecorder(stream, {
-                        mimeType: "video/webm"
+                        mimeType: getMediaType()
                     });
                 } catch (err) {
                     console.log(err);
