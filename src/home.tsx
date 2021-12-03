@@ -12,7 +12,7 @@ const Home = () => {
             <br/>
             <br/>
             <br/>
-            <button onClick={() => navigate('/video')}> Check video</button>
+            <button onClick={() => navigate('/video')}>  Check video</button>
             <br /> <br /> <br />
             <button onClick={() => navigate('/audio')}> Check audio</button>
         </div>
