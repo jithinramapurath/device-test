@@ -32,16 +32,16 @@ export default function AudioRecorder() {
             });
     }
 
-    navigator.mediaDevices.enumerateDevices()
-        .then(function (devices) {
-            devices.forEach(function (device) {
-                console.log(device.kind + ": " + device.label +
-                    " id = " + device.deviceId);
-            });
-        })
-        .catch(function (err) {
-            console.log(err.name + ": " + err.message);
-        });
+    // navigator.mediaDevices.enumerateDevices()
+    //     .then(function (devices) {
+    //         devices.forEach(function (device) {
+    //             console.log(device.kind + ": " + device.label +
+    //                 " id = " + device.deviceId);
+    //         });
+    //     })
+    //     .catch(function (err) {
+    //         console.log(err.name + ": " + err.message);
+    //     });
 
         let browser = window.navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
 

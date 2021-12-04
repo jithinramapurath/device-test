@@ -17,6 +17,8 @@ const Home = () => {
             <button onClick={() => navigate('/audio')}> Check audio</button>
             <br /> <br /> <br />
             <button onClick={() => navigate('/playVideo')}> Play video</button>
+            <br /> <br /> <br />
+            <button onClick={() => navigate('/face')}> Detect face</button>
         </div>
     )
 }
