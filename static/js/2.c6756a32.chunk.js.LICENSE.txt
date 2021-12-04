@@ -15,6 +15,22 @@ object-assign
  * @license MIT
  */
 
+/**
+ * tracking - A modern approach for Computer Vision on the web.
+ * @author Eduardo Lundgren <edu@rdo.io>
+ * @version v1.1.2
+ * @link http://trackingjs.com
+ * @license BSD
+ */
+
+/**
+ * tracking.js - A modern approach for Computer Vision on the web.
+ * @author Eduardo Lundgren <edu@rdo.io>
+ * @version v1.0.0
+ * @link http://trackingjs.com
+ * @license BSD
+ */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
