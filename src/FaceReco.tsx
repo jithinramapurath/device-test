@@ -4,6 +4,7 @@ import './App.css'
 
 require('tracking')
 require('tracking/build/data/face')
+// require('tracking/build/data/eye')
 
 const FaceReco: React.FC = () => {
 
@@ -38,19 +39,22 @@ const FaceReco: React.FC = () => {
         const canvas = document.getElementById('canvas')
         // @ts-ignore
         const context = canvas.getContext('2d');
-         // @ts-ignore
-        const tracker = new tracking.ObjectTracker('face')
-         // @ts-ignore
+        const tracker = new tracking.ObjectTracker(['face'])
         tracking.track("#video", tracker, { camera: true })
-         // @ts-ignore
         tracker.on('track', event => {
             // console.log(event)
             context.clearRect(0, 0, "350", "350")
-             // @ts-ignore
             event.data.forEach(rect => {
                 context.strokeStyle = "#ff0000"
                 context.lineWidth = 2
                 context.strokeRect(rect.x,rect.y,rect.width,rect.height)
+                setTimeout(() => {
+                    context.drawImage(videos, 0, 0, "350", "350");
+                    // @ts-ignore
+                   var dataURI = canvas.toDataURL('image/jpeg');
+                   console.log(dataURI);
+                   tracker.removeAllListeners()
+                  }, 750);
             })
         })
     }
@@ -58,7 +62,7 @@ const FaceReco: React.FC = () => {
     return (
         <div className="Container">
             <br /><br /><br />
-            {/* <button onClick={captureImage}>Capture image</button> */}
+            <button onClick={() => window.location.reload()}>Capture image</button>
             <video id="video" ref={videoRef} width="350px" height="350px" />
             <canvas id="canvas" width="350px" height="350px" />
         </div>
