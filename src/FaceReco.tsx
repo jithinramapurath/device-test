@@ -53,7 +53,7 @@ const FaceReco: React.FC = () => {
                 context.lineWidth = 2
                 context.strokeRect(rect.x,rect.y,"162","162")
                 // setTimeout(() => {
-                    if(rect.x > 110 && rect.y > 140) {
+                    if(rect.x > 120 && rect.x < 190 && rect.y > 120 && rect.y < 190) {
                     context.drawImage(videos, 0, 0, "350", "350");
                     // @ts-ignore
                    var dataURI = canvas.toDataURL('image/jpeg');
