@@ -1,4 +1,3 @@
-import { truncate } from 'fs';
 import * as React from 'react';
 
 import './App.css'
@@ -43,24 +42,23 @@ const FaceReco: React.FC = () => {
         // @ts-ignore
         const context = canvas.getContext('2d');
         const tracker = new tracking.ObjectTracker(['face'])
-        tracking.track("#video", tracker, { camera: true })
+        tracking.track("#video", tracker, {})
         tracker.on('track', event => {
             console.log(event)
             context.clearRect(0, 0, "350", "350")
             event.data.forEach(rect => {
                 console.log("react value ", rect)
                 context.strokeStyle = "#F8E71C"
-                context.lineWidth = 2
-                context.strokeRect(rect.x,rect.y,"162","162")
+                context.lineWidth = 2     
                 // setTimeout(() => {
-                    if(rect.x > 120 && rect.x < 190 && rect.y > 120 && rect.y < 190) {
+                    context.strokeRect(rect.x,rect.y,"162","162")
+                    if(rect.x > 110 && rect.x < 190 && rect.y > 110 && rect.y < 190) {
                     context.drawImage(videos, 0, 0, "350", "350");
                     // @ts-ignore
                    var dataURI = canvas.toDataURL('image/jpeg');
                    console.log(dataURI);
                    tracker.removeAllListeners()
                 // @ts-ignore
-                    // tracking.stop();
                    setImageCaptured(true)
                     }
                 //   }, 500);
@@ -71,12 +69,8 @@ const FaceReco: React.FC = () => {
     return (
         <div className="Container">
             <br /><br /><br />
-           
             <video id="video" ref={videoRef} width="350px" height="350px" />
             <canvas id="canvas" width="350px" height="350px" />
-            {
-                imageCaptured &&  <button onClick={() => window.location.reload()}>Capture image</button>
-            }
         </div>
     )
 }

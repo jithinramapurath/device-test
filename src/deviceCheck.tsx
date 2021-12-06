@@ -34,7 +34,7 @@ export default function VideoRecorder() {
 
     const getVideo = () => {
         navigator.mediaDevices
-            .getUserMedia({ audio: true, video: { width: 300, height: 300 } })
+            .getUserMedia({ audio: true, video: { width: 563, height: 430 } })
             .then(stream => {
                 let video = videoRef.current;
                 // @ts-ignore
@@ -129,6 +129,7 @@ export default function VideoRecorder() {
                     controls={true}
                     width="300px"
                     height="300px"
+                    id="reactPlayer"
                 />}
             </div>
             <br />
@@ -136,7 +137,7 @@ export default function VideoRecorder() {
             <br />
     
             {/* <div className="control"><Switch {...label} defaultChecked size="small" /></div> */}
-            <video id="player" ref={videoRef} />
+            <video id="video" ref={videoRef} />
         </div>
     );
 

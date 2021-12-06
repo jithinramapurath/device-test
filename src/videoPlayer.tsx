@@ -9,8 +9,8 @@ const VideoPlayer: React.FC = () => {
          <ReactPlayer
             url='https://www.youtube.com/watch?v=GCsxgn4j8ag'
             controls={true}
-            width="300px"
-            height="300px"
+            width="680px"
+            height="378px"
         />
         </div>
      );
