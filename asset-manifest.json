@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/device-test/static/css/main.38b912cd.chunk.css",
-    "main.js": "/device-test/static/js/main.4715bfae.chunk.js",
-    "main.js.map": "/device-test/static/js/main.4715bfae.chunk.js.map",
+    "main.css": "/device-test/static/css/main.5406c1ce.chunk.css",
+    "main.js": "/device-test/static/js/main.dc22c586.chunk.js",
+    "main.js.map": "/device-test/static/js/main.dc22c586.chunk.js.map",
     "runtime-main.js": "/device-test/static/js/runtime-main.62051b17.js",
     "runtime-main.js.map": "/device-test/static/js/runtime-main.62051b17.js.map",
     "static/js/2.66345423.chunk.js": "/device-test/static/js/2.66345423.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.7c3242ee.chunk.js": "/device-test/static/js/3.7c3242ee.chunk.js",
     "static/js/3.7c3242ee.chunk.js.map": "/device-test/static/js/3.7c3242ee.chunk.js.map",
     "index.html": "/device-test/index.html",
-    "static/css/main.38b912cd.chunk.css.map": "/device-test/static/css/main.38b912cd.chunk.css.map",
+    "static/css/main.5406c1ce.chunk.css.map": "/device-test/static/css/main.5406c1ce.chunk.css.map",
     "static/js/2.66345423.chunk.js.LICENSE.txt": "/device-test/static/js/2.66345423.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.62051b17.js",
     "static/js/2.66345423.chunk.js",
-    "static/css/main.38b912cd.chunk.css",
-    "static/js/main.4715bfae.chunk.js"
+    "static/css/main.5406c1ce.chunk.css",
+    "static/js/main.dc22c586.chunk.js"
   ]
 }
