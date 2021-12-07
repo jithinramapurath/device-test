@@ -78,3 +78,33 @@
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 } */
+
+#video_overlays {
+  position: absolute;
+  background-color:#FFFFFF74;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#video_box{
+  width: 563px;
+  height: 430px;
+  position: absolute;
+  margin-left: 430px;
+}
+
+#actionBtn {
+  position: absolute;
+  background-color:#FFFFFFE6;
+  height: 53px;
+  bottom: 0;
+  width: 563px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.hideVideo {
+  display: "flex"
+}

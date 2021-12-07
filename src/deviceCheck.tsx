@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from 'react-player'
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Typography from "@mui/material/Typography"
+import Button from '@mui/material/Button';
 
 import './App.css'
 
@@ -28,9 +32,11 @@ export default function VideoRecorder() {
 
     console.log("browser", browser[1])
     const getMediaType = () => {
-       if(browser[1] === 'Safari') return "video/mp4"
-       else return "video/webm"
+        if (browser[1] === 'Safari') return "video/mp4"
+        else return "video/webm"
     }
+
+    const label = { inputProps: { 'aria-label': 'Hide video for me' } };
 
     const getVideo = () => {
         navigator.mediaDevices
@@ -88,6 +94,10 @@ export default function VideoRecorder() {
                         available: true,
                         url
                     });
+
+                    // stream.getTracks().forEach(function (track) {
+                    //     track.stop();
+                    // });
                 };
 
                 setStream({
@@ -127,19 +137,42 @@ export default function VideoRecorder() {
                 {recording.available && <ReactPlayer
                     url={recording.url}
                     controls={true}
-                    width="300px"
-                    height="300px"
-                    id="reactPlayer"
+                    width="563px"
+                    height="430px"
+                    id="react"
                 />}
             </div>
             <br />
             <br />
             <br />
-    
+
             {/* <div className="control"><Switch {...label} defaultChecked size="small" /></div> */}
-            <video id="video" ref={videoRef} />
+            {/* <video id="video" ref={videoRef} /> */}
+            <div id="video_box">
+                {/* <div id="video_overlays"></div> */}
+                <div>
+                    <video id="video" ref={videoRef}>Your browser does not support this streaming content.</video>
+                    <div id="actionBtn">
+                        <FormControlLabel
+                            value="end"
+                            control={<Switch {...label} defaultChecked size="small" />}
+                            label={<Typography color="#00405E">Hide video for me</Typography>}
+                            labelPlacement="end"
+                            sx={{ display: "flex", marginTop: "5px" }}
+                        />
+                        <FormControlLabel
+                            value="end"
+                            control={<Button disableRipple sx={{ textTransform: "none" }} size="small" onClick={() =>
+                                // @ts-ignore
+                                stream.recorder.stop()}><Typography color="#A30000">Stop recording</Typography></Button>}
+                            label=""
+                            labelPlacement="end"
+                            sx={{ display: "flex", marginTop: "5px", marginLeft: "30px" }}
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 
 }
-

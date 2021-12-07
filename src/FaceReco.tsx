@@ -4,7 +4,6 @@ import './App.css'
 
 require('tracking')
 require('tracking/build/data/face')
-// require('tracking/build/data/eye')
 
 const FaceReco: React.FC = () => {
 
@@ -42,7 +41,7 @@ const FaceReco: React.FC = () => {
         // @ts-ignore
         const context = canvas.getContext('2d');
         const tracker = new tracking.ObjectTracker(['face'])
-        tracking.track("#video", tracker, {})
+        tracking.track("#video", tracker)
         tracker.on('track', event => {
             console.log(event)
             context.clearRect(0, 0, "350", "350")
